@@ -8,3 +8,4 @@
  + https://github.com/expressjs/express-messages/blob/master/test/messages.js
  + https://github.com/expressjs/express-messages/blob/master/test/fixtures/custom.ejs
  + https://github.com/expressjs/express-messages/blob/master/test/fixtures/template.ejs
+ + http://www.sitepoint.com/understanding-module-exports-exports-node-js/
