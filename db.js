@@ -1,5 +1,5 @@
 var mongoose = require( 'mongoose' );
-var mongoConnectionString = process.env.MONGOLAB_URI || 'mongodb://localhost/robots_dev';
+var mongoConnectionString = process.env.MONGODB_URI || 'mongodb://localhost/robots_dev';
 mongoose.connect(mongoConnectionString); // establishes a database connection which may in some cases need to be manually closed ... use db.disconnect();
 
 module.exports = mongoose;

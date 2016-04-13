@@ -41,7 +41,7 @@ router.post('/robots', function(req, res, next) {
             });
         } else {
             console.log("CREATE ROBOT", bot)
-            req.flash('info', 'Created a New Robot named '+robot_name );
+            req.flash('success', 'Created a New Robot named '+robot_name );
             res.redirect('/robots')
         };
     });

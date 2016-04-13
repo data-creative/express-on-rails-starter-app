@@ -8,21 +8,15 @@ var bodyParser = require('body-parser');
 var session = require('express-session'); // ADDITION! enables session storage; required for flash messages
 var flash = require('connect-flash'); // ADDITION! enables flash messages
 var moment = require('moment-timezone'); // ADDITION! enables date string formatting
+var MongoStore = require('connect-mongo')(session); // MONGO PRODUCTION ADDITION! put this below definition of session variable
 
-
-// var mongoose = require('mongoose'); // MONGO ADDITION!
-//
-// var mongoConnectionString = process.env.MONGOLAB_URI || 'mongodb://localhost/robots_dev'; // MONGO ADDITION!
-// mongoose.connect(mongoConnectionString); // MONGO ADDITION!
-var db = require("./db") // // MONGO ADDITION! starts a new mongoose connection
-
-
-
+var db = require("./db") // MONGO ADDITION! starts a new mongoose connection
 
 var home_routes = require('./app/controllers/home_controller'); // EDIT! recognizes the home controller file, app/controllers/home_controller. was: var routes = require('./routes/index');
 var robot_routes = require('./app/controllers/robots_controller'); // EDIT! recognizes the robots controller file, app/controllers/robots_controller. was: var users = require('./routes/users');
 
-var sessionStore = new session.MemoryStore; // ADDITION! the default memory store for sessions in the development environment
+//var sessionStore = new session.MemoryStore; // ADDITION! the default memory store for sessions in the development environment
+var sessionStore = new MongoStore({ mongooseConnection: db.connection }); // MONGO PRODUCTION EDIT! uses mongo for session storage. was: var sessionStore = new session.MemoryStore;
 
 var app = express();
 
