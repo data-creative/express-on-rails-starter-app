@@ -11,7 +11,9 @@ git clone git@github.com:data-creative/express-on-rails-starter-app.git
 cd express-on-rails-starter-app/
 ````
 
-Checkout the relevant branch before making changes.
+### Branches
+
+Checkout the intended branch before committing changes.
 
 branch | description | blog post(s) | production-ready? | production location
 --- | --- | --- | --- | ---
@@ -20,6 +22,35 @@ branch | description | blog post(s) | production-ready? | production location
 `mongo` | A basic *MongoDB*-connected app.  | [Part 6b](http://data-creative.info/process-documentation/2016/04/09/node-for-rails-developers-part-6b-express-mongodb-datastore/) | false | N/A
 `knex-deploy` | A production-ready *PostgreSQL*-connected app. | [Part 7](http://data-creative.info/process-documentation/2016/04/09/node-for-rails-developers-part-7-deploying-node-app-to-heroku/) | true | https://express-on-rails-starter.herokuapp.com/
 `mongo-deploy` | A production-ready *MongoDB*-connected app. | [Part 7](http://data-creative.info/process-documentation/2016/04/09/node-for-rails-developers-part-7-deploying-node-app-to-heroku/) | true | https://express-on-rails-mongo.herokuapp.com/
+
+
+### Database Setup
+
+Create the database.
+
+```` sh
+psql -U robot --password -d postgres -f $(pwd)/db/create.sql
+````
+
+Migrate the database.
+
+```` sh
+knex migrate:latest --knexfile db/config.js
+````
+
+Populate (seed) the database.
+
+```` sh
+knex seed:run --knexfile db/config.js
+````
+
+### Development Web Server
+
+Start a local web server and view the app at `localhost:3000`.
+````
+DEBUG=robots_app:* npm start
+````
+
 
 
 ## Deploying

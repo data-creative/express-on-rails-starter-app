@@ -8,3 +8,12 @@
  + https://github.com/expressjs/express-messages/blob/master/test/messages.js
  + https://github.com/expressjs/express-messages/blob/master/test/fixtures/custom.ejs
  + https://github.com/expressjs/express-messages/blob/master/test/fixtures/template.ejs
+
+## Bookshelf
+
+ + https://github.com/tgriesser/bookshelf
+ + http://bookshelfjs.org/
+ + https://joepettit.com/bookshelf-js/
+ + https://github.com/tgriesser/bookshelf/wiki/Plugin:-Model-Registry
+ + http://billpatrianakos.me/blog/2015/11/30/how-to-structure-bookshelf-dot-js-models/
+ + http://thinkingonthinking.com/relations-with-bookshelfjs/

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var knex = require("../../db");
+var knex = require("../../db").knex;
 
 var create_robot_path = '/robots/';
 
