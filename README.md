@@ -1,6 +1,6 @@
 # Express on Rails - Starter App
 
-This repository supports a [series of blog posts](http://data-creative.info/process-documentation/2016/04/09/node-for-rails-developers-part-1-choose-stack/) to help *Rails* developers learn *Node.js* and *Express*.
+This repository supports a [series of blog posts](http://data-creative.info/series/node-js-for-rails-developers/) to help *Rails* developers learn *Node.js* and *Express*.
 
 ## Contributing
 
