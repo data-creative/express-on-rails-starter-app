@@ -19,3 +19,7 @@
  + http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
  + http://stackoverflow.com/questions/23860275/javascript-angular-not-loading-when-using-express
  + http://expressjs.com/en/starter/static-files.html
+ + https://github.com/glenjamin/webpack-hot-middleware
+ + http://madole.github.io/blog/2015/08/26/setting-up-webpack-dev-middleware-in-your-express-application/
+ + https://github.com/madole/webpack-dev-middleware-boilerplate
+ + https://github.com/glenjamin/ultimate-hot-reloading-example
