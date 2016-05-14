@@ -9,4 +9,10 @@
  + https://github.com/expressjs/express-messages/blob/master/test/fixtures/custom.ejs
  + https://github.com/expressjs/express-messages/blob/master/test/fixtures/template.ejs
  + http://www.sitepoint.com/understanding-module-exports-exports-node-js/
+
+## React and Webpack
+
  + http://ditrospecta.com/javascript/react/es6/webpack/heroku/2015/08/08/deploying-react-webpack-heroku.html
+ + https://github.com/alanbsmith/react-node-example/
+ + https://github.com/webpack/webpack-dev-server/issues/88
+ + http://stackoverflow.com/questions/28846814/what-does-publicpath-in-webpack-do

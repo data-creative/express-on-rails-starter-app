@@ -1,4 +1,3 @@
-
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -34,6 +33,22 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'app/assets'))); // EDIT! recognizes static files stored in the app/assets directory. was: app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public'))); // ADDITION! recognize static files compiled/transpiled from react components EDIT: don't need this because of the "publicPath" webpack config variable
+app.use(express.static(path.join(__dirname, 'app/views'))); // ADDITION! recognize index.html file in the app/views directory
+
+if(process.env.NODE_ENV !== 'production') {
+  var webpack = require('webpack');
+  var webpackDevMiddleware = require('webpack-dev-middleware');
+  var webpackHotMiddleware = require('webpack-hot-middleware');
+  var config = require('./config/webpack.config');
+  var compiler = webpack(config);
+
+  app.use(webpackDevMiddleware(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+  }));
+  app.use(webpackHotMiddleware(compiler));
+} // ADDITION! for react - use webpack-dev-server and middleware in development environment
 
 app.use(session({
    cookie: { maxAge: 60000 },

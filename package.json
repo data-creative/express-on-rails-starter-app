@@ -36,6 +36,8 @@
     "react-dom": "^15.0.2",
     "serve-favicon": "~2.3.0",
     "style-loader": "^0.13.1",
-    "webpack": "^1.13.0"
+    "webpack": "^1.13.0",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.10.0"
   }
 }

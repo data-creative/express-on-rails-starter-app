@@ -2,25 +2,24 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './app/index.js', // 'webpack-hot-middleware/client'
+  entry: './app/index.js',
   output: {
-    filename: './public/bundle.js'
+    path: path.resolve('./public/'), // avoid "invalid argument" error by setting a value for this required variable
+    filename: 'bundle.js',
+    publicPath: '/public/' // enables browser to access files in the "public" directory
+    //filename: './public/bundle.js'
   },
   devServer: {
     contentBase: "./app/views",
     progress:true,
     colors:true,
-    inline:true //,
-    //proxy: {
-    //  "/api/*": {
-    //    target: "http://localhost:3000",
-    //    secure: false,
-    //    //rewrite: function(req, options) {
-    //    //  //you can handle rewrite here if you need to
-    //    //}
-    //  }
-    //}
+    inline:true
   },
+  //plugins: [
+  //  new webpack.optimize.OccurenceOrderPlugin(),
+  //  new webpack.HotModuleReplacementPlugin(),
+  //  new webpack.NoErrorsPlugin()
+  //],
   module: {
     loaders: [
       {
