@@ -1,0 +1,6 @@
+*
+
+!.gitignore
+
+# ignore all files in this folder except this file.
+# react components will be compiled/transpiled here.

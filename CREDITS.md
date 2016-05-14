@@ -9,3 +9,4 @@
  + https://github.com/expressjs/express-messages/blob/master/test/fixtures/custom.ejs
  + https://github.com/expressjs/express-messages/blob/master/test/fixtures/template.ejs
  + http://www.sitepoint.com/understanding-module-exports-exports-node-js/
+ + http://ditrospecta.com/javascript/react/es6/webpack/heroku/2015/08/08/deploying-react-webpack-heroku.html
