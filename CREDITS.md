@@ -17,3 +17,5 @@
  + https://github.com/webpack/webpack-dev-server/issues/88
  + http://stackoverflow.com/questions/28846814/what-does-publicpath-in-webpack-do
  + http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup
+ + http://stackoverflow.com/questions/23860275/javascript-angular-not-loading-when-using-express
+ + http://expressjs.com/en/starter/static-files.html
