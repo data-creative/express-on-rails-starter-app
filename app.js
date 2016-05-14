@@ -70,9 +70,9 @@ if(process.env.NODE_ENV !== 'production') {
 
   watcher.on('ready', function() {
     watcher.on('all', function() {
-      console.log("Clearing / module cache from server");
+      console.log("Clearing /public/ module cache from server");
       Object.keys(require.cache).forEach(function(id) {
-        if (/[\/\\][\/\\]/.test(id)) delete require.cache[id];
+        if (/[\/\\]public[\/\\]/.test(id)) delete require.cache[id];
       });
     });
   });
