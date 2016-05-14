@@ -34,6 +34,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'app/assets'))); // EDIT! recognizes static files stored in the app/assets directory. was: app.use(express.static(path.join(__dirname, 'public')));
 app.use('/public', express.static(path.join(__dirname, 'public'))); // ADDITION! recognize static files compiled/transpiled from react components
+
 app.use(express.static(path.join(__dirname, 'app/views'))); // ADDITION! recognize index.html file in the app/views directory
 
 if(process.env.NODE_ENV !== 'production') {
