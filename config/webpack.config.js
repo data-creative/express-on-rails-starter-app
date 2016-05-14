@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve('./public/'), // avoid "invalid argument" error by setting a value for this required variable
     filename: 'bundle.js',
-    publicPath: '/public/' // enables browser to access files in the "public" directory
+    publicPath: path.resolve('/public/') // enables browser to access files in the "public" directory
     //filename: './public/bundle.js'
   },
   devServer: {
