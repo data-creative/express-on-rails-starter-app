@@ -12,5 +12,6 @@ ReactDOM.render(
 
 // avoids "[HMR] The following modules couldn't be hot updated: (Full reload needed) This is usually because the modules which have changed (and their parents) do not know how to hot reload themselves." error
 // https://webpack.github.io/docs/hot-module-replacement.html
-// todo: only in development env
-module.hot.accept();
+if (module.hot) {
+  module.hot.accept();
+}

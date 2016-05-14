@@ -23,3 +23,5 @@
  + http://madole.github.io/blog/2015/08/26/setting-up-webpack-dev-middleware-in-your-express-application/
  + https://github.com/madole/webpack-dev-middleware-boilerplate
  + https://github.com/glenjamin/ultimate-hot-reloading-example
+ + https://github.com/glenjamin/webpack-hot-middleware/issues/21
+ + https://github.com/glenjamin/ultimate-hot-reloading-example/blob/master/server.js

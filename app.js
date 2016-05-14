@@ -52,7 +52,45 @@ if(process.env.NODE_ENV !== 'production') {
 
   app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.publicPath}));
   app.use(webpackHotMiddleware(compiler, {log: console.log}))
+
+
+  // Anything else gets passed to the client app's server rendering
+  app.get('*', function(req, res, next) {
+    require('./app/assets/views/index')(req.path, function(err, page) {
+      if (err) return next(err);
+      res.send(page);
+    });
+  });
+
+  // Do "hot-reloading" of express stuff on the server
+  // Throw away cached modules and re-require next time
+  // Ensure there's no important state in there!
+  var chokidar = require('chokidar');
+  var watcher = chokidar.watch('./public');
+
+  watcher.on('ready', function() {
+    watcher.on('all', function() {
+      console.log("Clearing / module cache from server");
+      Object.keys(require.cache).forEach(function(id) {
+        if (/[\/\\][\/\\]/.test(id)) delete require.cache[id];
+      });
+    });
+  });
+
+  // Do "hot-reloading" of react stuff on the server
+  // Throw away the cached client modules and let them be re-required next time
+  compiler.plugin('done', function() {
+    console.log("Clearing /views/ module cache from server");
+    Object.keys(require.cache).forEach(function(id) {
+      if (/[\/\\]views[\/\\]/.test(id)) delete require.cache[id];
+    });
+  });
+
 } // ADDITION! for react - use webpack-dev-server and middleware in development environment
+
+
+
+
 
 
 
