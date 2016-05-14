@@ -9,6 +9,7 @@ branch | description | blog post(s) | production-ready? | production location
 `mongo` | A basic *MongoDB*-connected app.  | [Part 6b](http://data-creative.info/process-documentation/2016/04/09/node-for-rails-developers-part-6b-express-mongodb-datastore/) | false | N/A
 `knex-deploy` | A production-ready *PostgreSQL*-connected app. | [Part 7](http://data-creative.info/process-documentation/2016/04/09/node-for-rails-developers-part-7-deploying-node-app-to-heroku/) | true | https://express-on-rails-starter.herokuapp.com/
 `mongo-deploy` | A production-ready *MongoDB*-connected app. | [Part 7](http://data-creative.info/process-documentation/2016/04/09/node-for-rails-developers-part-7-deploying-node-app-to-heroku/) | true | https://express-on-rails-mongo.herokuapp.com/
+`mongo-deploy-rect` | A production-ready *MongoDB*-connected app with front-end components made with *React.js*. | [Part 8](#) | true | https://express-on-rails-mongo-react.herokuapp.com/
 
 ## Contributing
 
