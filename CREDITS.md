@@ -16,3 +16,4 @@
  + https://github.com/alanbsmith/react-node-example/
  + https://github.com/webpack/webpack-dev-server/issues/88
  + http://stackoverflow.com/questions/28846814/what-does-publicpath-in-webpack-do
+ + http://www.christianalfoni.com/articles/2015_04_19_The-ultimate-webpack-setup

@@ -32,11 +32,15 @@ Start the development web server with `npm start`.
 Configure remotes.
 
 ```` sh
-heroku login # get collaborator access to 'express-on-rails-starter' and 'express-on-rails-mongo' heroku applications
+heroku login # get collaborator access to 'express-on-rails-starter' and 'express-on-rails-mongo' and 'express-on-rails-mongo-react' heroku applications
 heroku git:remote -a express-on-rails-starter
 git remote rename heroku heroku-starter
+
 heroku git:remote -a express-on-rails-mongo
 git remote rename heroku heroku-mongo
+
+heroku git:remote -a express-on-rails-mongo-react
+git remote rename heroku heroku-mongo-react
 ````
 
 Deploy.
@@ -44,6 +48,7 @@ Deploy.
 ```` sh
 git push heroku-starter knex-deploy:master
 git push heroku-mongo mongo-deploy:master
+git push heroku-mongo-react mongo-deploy-react:master
 ````
 
 ## [License](/LICENSE.md)

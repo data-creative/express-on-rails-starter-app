@@ -10,7 +10,7 @@
     "build": "webpack --config ./config/webpack.config.js --progress --colors",
     "start": "nodemon ./bin/www",
     "test": "echo 'This is for running tests like ... mocha.'",
-    "postinstall": "echo 'This is when you would run ... bower install && grunt build.'",
+    "postinstall": "npm run build",
     "heroku-prebuild": "echo 'This runs before Heroku installs your dependencies.'",
     "heroku-postbuild": "node db/seed.js"
   },
