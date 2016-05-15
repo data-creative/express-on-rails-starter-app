@@ -32,24 +32,48 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'app/assets'))); // EDIT! recognizes static files stored in the app/assets directory. was: app.use(express.static(path.join(__dirname, 'public')));
-app.use('/public', express.static(path.join(__dirname, 'public'))); // ADDITION! recognize static files compiled/transpiled from react components
 
+
+
+
+
+
+
+app.use(express.static(path.join(__dirname, 'app/assets'))); // EDIT! recognizes static files stored in the app/assets directory. was: app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'app/views'))); // ADDITION! recognize index.html file in the app/views directory
+app.use('/public', express.static(path.join(__dirname, 'public'))); // ADDITION! recognize static files compiled/transpiled from react components
 
 if(process.env.NODE_ENV !== 'production') {
   var webpack = require('webpack');
   var webpackDevMiddleware = require('webpack-dev-middleware');
   var webpackHotMiddleware = require('webpack-hot-middleware');
-  var config = require('./config/webpack.config');
+  var config = require('./config/webpack.dev.config');
   var compiler = webpack(config);
 
-  app.use(webpackDevMiddleware(compiler, {
-    noInfo: true,
-    publicPath: config.output.publicPath
-  }));
-  app.use(webpackHotMiddleware(compiler));
+  app.use(webpackDevMiddleware(compiler, {noInfo: true, publicPath: config.output.publicPath}));
+  app.use(webpackHotMiddleware(compiler, {log: console.log}))
 } // ADDITION! for react - use webpack-dev-server and middleware in development environment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.use(session({
    cookie: { maxAge: 60000 },
